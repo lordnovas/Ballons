@@ -54,6 +54,8 @@ public class BalloonActivity extends ActionBarActivity
     }
 
 
+    /*************CircleView inner-class*****/
+
     private class CircleView extends View
     {
         private Random rand = new Random();
@@ -66,7 +68,7 @@ public class BalloonActivity extends ActionBarActivity
         private ArrayList<Circle> circles = new ArrayList<>();
 
 
-        /******Constructor*************************/
+        /******Constructor********************/
 
         public CircleView(Context context)
         {
