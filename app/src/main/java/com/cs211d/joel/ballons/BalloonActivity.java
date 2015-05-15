@@ -76,6 +76,7 @@ public class BalloonActivity extends ActionBarActivity
             p = new Paint();
             p.setColor(Color.WHITE);
             choice = CLEAR;
+            p.setAntiAlias(true);
         }
 
         /***************onDraw()****************/
@@ -164,16 +165,12 @@ public class BalloonActivity extends ActionBarActivity
             //Create Circle Object
             Circle c = new Circle();
             c.setR(getRandomNum(1, 200));
-            c.setX(getRandomNum(1, screenWidth));
-            c.setY(getRandomNum(1, screenHeight));
-
+            c.setX(getRandomNum(10, screenWidth - c.getR()));
+            c.setY(getRandomNum(10, screenHeight - c.getR()));
+            checkBounds(c);
             //Add newly created circle to Circle Array
             circles.add(c);
 
-            for(Circle circle:circles)
-            {
-                checkBounds(circle);
-            }
             invalidate();
         }
 
@@ -211,7 +208,7 @@ public class BalloonActivity extends ActionBarActivity
             {
                 circle.setY(getRandomNum(5,
                         (screenHeight + y) / 2));
-            }
+        }
             return bounds;
         }
 
