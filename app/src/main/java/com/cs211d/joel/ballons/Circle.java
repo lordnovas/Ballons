@@ -1,5 +1,15 @@
 package com.cs211d.joel.ballons;
 
+/*
+  Author: Joel Rainey
+  Date: 5/21
+  Class: CS211D Spring 2015
+  Android Project: Balloons
+  Filename: Circle.java
+  Assignment Objective: Create an application that randomly draws a circle on screen when the
+  user press "Balloon" Button
+*/
+
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -31,17 +41,6 @@ public class Circle
     {
         //Generate random int between min-max
         return min + rand.nextInt((Math.abs(max - min) + 1));
-    }
-
-    /******getBounds()***********/
-
-    public Rect getBounds()
-    {
-        return new Rect(
-                getX()-r,
-                getY()-r,
-                (getR() + getX()),
-                (getR() + getY()));
     }
 
     /******GettersAndSetters*****/

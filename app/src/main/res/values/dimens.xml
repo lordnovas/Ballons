@@ -1,5 +1,13 @@
+<!--
+  Author: Joel Rainey
+  Date: 5/21
+  Class: CS211D Spring 2015
+  Android Project: Balloons
+  Filename: dimens.xml
+  Assignment Objective: Create an application that randomly
+  draws a circle on screen when the user press "Balloon" Button
+  -->
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

@@ -1,6 +1,13 @@
 <resources>
-
-    <!-- Base application theme. -->
+    <!--
+    Author: Joel Rainey
+    Date: 5/21
+    Class: CS211D Spring 2015
+    Android Project: Balloons
+    Filename: styles.xml
+    Assignment Objective: Create an application that randomly
+    draws a circle on screen when the user press "Balloon" Button
+    -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>

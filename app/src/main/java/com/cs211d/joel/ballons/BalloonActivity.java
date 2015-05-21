@@ -1,18 +1,24 @@
 package com.cs211d.joel.ballons;
 
+/*
+  Author: Joel Rainey
+  Date: 5/21
+  Class: CS211D Spring 2015
+  Android Project: Balloons
+  Filename: BalloonActivity.java
+  Assignment Objective: Create an application that randomly draws a circle on screen when the
+  user press "Balloon" Button
+*/
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -68,7 +74,7 @@ public class BalloonActivity extends ActionBarActivity
         private ArrayList<Circle> circles = new ArrayList<>();
 
 
-        /******Constructor********************/
+        /******Constructor******************/
 
         public CircleView(Context context)
         {
@@ -79,7 +85,7 @@ public class BalloonActivity extends ActionBarActivity
             p.setAntiAlias(true);
         }
 
-        /***************onDraw()****************/
+        /***************onDraw()**************/
 
         @Override
         protected void onDraw(Canvas canvas)
@@ -104,7 +110,7 @@ public class BalloonActivity extends ActionBarActivity
             }
         }
 
-        /**************onMeasure()**************/
+        /**************onMeasure()************/
 
         @Override
         protected void onMeasure (int widthMeasureSpec, int heightMeasureSpec)
@@ -152,7 +158,6 @@ public class BalloonActivity extends ActionBarActivity
 
         public void clearScreen()
         {
-            //set choice to Clear
             choice = CLEAR;
             //delete all circles
             circles.clear();
@@ -163,53 +168,16 @@ public class BalloonActivity extends ActionBarActivity
         public void makeCircle()
         {
             //Create Circle Object
+
             Circle c = new Circle();
             c.setR(getRandomNum(1, 200));
-            c.setX(getRandomNum(10, screenWidth - c.getR()));
-            c.setY(getRandomNum(10, screenHeight - c.getR()));
-            checkBounds(c);
+            c.setX(getRandomNum(1 + c.getR(), screenWidth - c.getR()));
+            c.setY(getRandomNum(1 + c.getR(), screenHeight - c.getR()));
+
             //Add newly created circle to Circle Array
             circles.add(c);
 
             invalidate();
-        }
-
-        /***********checkBounds()***************/
-
-        public Rect checkBounds(Circle circle)
-        {
-            /**
-             * Check bounds of the Circle
-             * if the original bounds are off screen
-             * push/pull circle to the screen
-             */
-
-            Rect bounds = circle.getBounds();
-
-            int x = circle.getX();
-            int y = circle.getY();
-
-            if (bounds.left < 0)
-            {
-                circle.setX(getRandomNum(5,
-                        (x + screenWidth) / 2));
-            }
-            else if(bounds.right > screenWidth)
-            {
-                circle.setX(getRandomNum(5,
-                        (screenWidth - x)/2));
-            }
-            else if(bounds.top < 0)
-            {
-                circle.setY(getRandomNum(5,
-                        (screenHeight + y )/ 2));
-            }
-            else if(bounds.bottom > screenHeight)
-            {
-                circle.setY(getRandomNum(5,
-                        (screenHeight + y) / 2));
-        }
-            return bounds;
         }
 
         /***********getRandomNum()**************/

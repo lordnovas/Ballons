@@ -1,3 +1,13 @@
+<!--
+  Author: Joel Rainey
+  Date: 5/21
+  Class: CS211D Spring 2015
+  Android Project: Balloons
+  Filename: activity_balloon.xml
+  Assignment Objective: Create an application that randomly
+  draws a circle on screen when the user press "Balloon" Button
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/makeCircle"
-                android:text="Make Circle"
+                android:text="Balloon"
                 android:onClick="makeCircle"
                 android:layout_alignParentLeft="true"/>
 
